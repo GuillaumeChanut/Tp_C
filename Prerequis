@@ -1,0 +1,69 @@
+Introduction : Apprendre le C pas à pas.
+
+
+Les prérequis :
+
+Je ne parlerais ici que du développement sous système linux, je n'ai jamais coder sous macos, et je vous conseille fortement de passer sous linux si vous coder sur Windows, encore plus si vous débuter.
+
+
+GCC :
+
+Ce sera votre compilateur, il permet de compiler votre code en C, de le transformer dans un language compris par votre ordinateur.
+
+Installation :
+
+$ apt-get install gcc && apt-get update
+
+
+
+Un éditeur de texte:
+
+Il vous faudra un éditeur de texte pour code, je vous conseille donc de choisir entre Vim, Emacs ou Atom.
+
+https://atom.io https://www.gnu.org/software/emacs/ https://doc.ubuntu-fr.org/vim
+
+
+
+Valgrind :
+
+Outils très utile pour débusquer vos segfault, memory leaks ou absences de free.
+
+$ apt-get install valgrind && apt-get update
+
+
+
+Makefile :
+
+Afin de facilité la compilation lors de gros projet, ou simplement faire les choses plus proprement, crée un makefile est très utile, je vous en offre un d'exemple.
+
+
+
+CC = gcc
+
+RM = rm –f
+
+CFLAGS += -Wextra -Wall –Werror
+
+NAME = Nom_Du_Binaire
+
+SRCS = main.c \
+
+OBJS = $(SRCS:.c=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+
+$(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
+
+clean:
+
+$(RM) $(OBJS)
+
+fclean: clean
+
+$(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
