@@ -1,0 +1,45 @@
+Tp_1 : Apprendre le C pas à pas.
+
+
+Exercices 1 :
+
+Nom du binaire : alpha
+
+Compilation : via Makefile, avec make, make re, make fclean.
+
+Fonctions autorisées : Write
+
+Réalisez un programme qui affiche l'alphabet suivi d'un saut de ligne.
+
+
+Exemple :
+
+./alpha | cat -e
+
+abcdefghijklmnopqrstuvwxyz$
+
+
+
+
+Exercice 2 :
+
+Nom du binaire : my_alpha
+
+Compilation : via Makefile, avec make, make re, make fclean.
+
+Fonctions autorisées : Write
+
+Réaliser un programme qui affiche en fonction des paramètres l'alphabet ou l'alphabet inversé, suivi d'un saut de ligne.
+
+
+
+Exemple :
+
+./my_alpha alpha | cat -e
+
+abcdefghijklmnopqrstuvwxyz$
+
+
+./my_alpha revalpha | cat -e 
+
+Zyxwvutsrqponmlkjihgfedcba$
